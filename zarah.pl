@@ -869,7 +869,7 @@ sub restart {
     my $sender = $dialogue->person();
     return if !grep { $sender eq $_ } @developers;
 
-    system('svn up');
+    system('git pull');
     exec('perl zarah.pl');
     die;
 }
