@@ -1382,7 +1382,7 @@ sub help {
 sub welcome {
     my ($dialogue) = @_;
 
-    $dialogue->reply()->( 'thank you :)' );
+    $dialogue->reply()->( 'thank you. I feel like a new person! :)' );
 }
 
 sub botsnack {
