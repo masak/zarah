@@ -109,7 +109,7 @@ my @actions = (
     [ [qw<ping>],                  \&ping_message                     ],
     [ [qw<pong>],                  \&ignore_pong                      ],
     [ [qw<help>],                  \&help                             ],
-    [ [qw<welcome>],               \&welcome                          ],
+    [ [qw<welcome wb>],               \&welcome                          ],
     [ [qw<botsnack botbeer>],      \&botsnack,                'bare'  ],
     [ [qw<tutorial tour>],         \&tutorial                         ],
     [ $yourcute,                   \&no_you_are_the_cute_one, 'final' ],
