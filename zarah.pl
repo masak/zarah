@@ -1204,8 +1204,10 @@ sub bug_url {
                               : 'http://pele.farmbio.uu.se/bugzilla36/';
     my $url = $base . "show_bug.cgi?id=$bug_id";
 
-    $dialogue->say()->( sprintf 'bug #%04d | %s', $bug_id,
-                                                  makeashorterlink($url) );
+    my $newurl = length($url) < $url_shortening_limit ? $url 
+                                                      : makeashorterlink($url);
+
+    $dialogue->say()->( sprintf 'bug #%04d | %s', $bug_id, $newurl );
 }
 
 sub cdk_bug_url {
