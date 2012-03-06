@@ -1196,7 +1196,7 @@ sub shorten_url {
 sub bug_url {
     my ($dialogue) = @_;
 
-    return if $dialogue->person() !~ /^CIA-\d\d/;
+    #return if $dialogue->person() !~ /^CIA-\d\d/;
     return if $dialogue->channel() !~ /bioclipse|farmbio/;
 
     my $bug_id = $dialogue->content();
