@@ -991,12 +991,12 @@ sub seen {
         return;
     }
 
-    if ( !exists $seen->{$person} ) {
+    if ( !exists $seen->{lc $person} ) {
         $dialogue->say()->( "I have not seen $person" );
         return;
     }
 
-    my ($time, $chan, $quote) = @{$seen->{$person}};
+    my ($time, $chan, $quote) = @{$seen->{lc $person}};
     my $time_ago = nice_ago( DateTime->now()->subtract_datetime($time) );
     $dialogue->say()->(
         "$person was last seen $time_ago in $chan saying '$quote'"
@@ -1611,7 +1611,7 @@ sub irc_public {
     my $channel = $where->[0];
 
     my $now = DateTime->now();
-    $seen->{$nick} = [ $now, $channel, $what ];
+    $seen->{lc $nick} = [ $now, $channel, $what ];
     save_to_file( $file_of{seen}, $seen );
 
     add_to_log( $what, $who, $channel );
