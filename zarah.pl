@@ -916,7 +916,7 @@ sub pelezilla_search {
 
     if ( my ($id) = $content =~ m[^\s*#?(\d+)\s*$] ) {
         my $base = $id < 3000 ? 'http://pele.farmbio.uu.se/bugzilla3/'
-                              : 'http://pele.farmbio.uu.se/bugzilla36/';
+                              : 'http://pele.farmbio.uu.se/bugzilla/';
         my $url = $base . "show_bug.cgi?id=$id";
         $dialogue->say()->( $url );
         return;
