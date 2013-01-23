@@ -925,7 +925,7 @@ sub pelezilla_search {
     my $massaged_content = $dialogue->content();
     $massaged_content =~ s/ /+/g;
 
-    my $url = 'http://pele.farmbio.uu.se/bugzilla36/buglist.cgi?'
+    my $url = 'http://pele.farmbio.uu.se/bugzilla/buglist.cgi?'
               . 'quicksearch=' . $massaged_content;
     my $feed = XML::Feed->parse( URI->new( $url . '&ctype=atom' ));
     if ( !defined $feed ) {
@@ -1201,7 +1201,7 @@ sub bug_url {
 
     my $bug_id = $dialogue->content();
     my $base = $bug_id < 3000 ? 'http://pele.farmbio.uu.se/bugzilla3/'
-                              : 'http://pele.farmbio.uu.se/bugzilla36/';
+                              : 'http://pele.farmbio.uu.se/bugzilla/';
     my $url = $base . "show_bug.cgi?id=$bug_id";
 
     my $newurl = length($url) < $url_shortening_limit ? $url 
