@@ -368,6 +368,7 @@ sub nice_ago {
 
     my $time_ago = join ' ', ($d->years()   ? ($d->years(),   'y') : ()),
                              ($d->months()  ? ($d->months(),  'm') : ()),
+                             ($d->weeks()   ? ($d->weeks(),   'w') : ()),
                              ($d->days()    ? ($d->days(),    'd') : ()),
                              ($d->hours()   ? ($d->hours(),   'h') : ()),
                              ($d->minutes() ? ($d->minutes(), 'm') : ()),
